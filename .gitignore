@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# Media files (large, user-specific)
+*.mp4
+*.mp3
+*.wav
+*.avi
+*.mov
+*.mkv
+
+# Transcription output (generated)
+video_timestamps.json
+transcript.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Claude
+.claude-costs
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,5 @@
+faster-whisper>=1.0.0
+Pillow>=10.0.0
+pysrt>=1.1.2
+PyYAML>=6.0
+numpy>=1.24.0

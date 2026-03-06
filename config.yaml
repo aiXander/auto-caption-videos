@@ -1,0 +1,54 @@
+# Subtitle overlay configuration
+
+# Text layout — these control chunking and font auto-sizing
+text:
+  max_chars_per_screen: 40  # Max characters per chunk; overflow starts a new chunk
+  max_lines: 2              # Max wrapped lines on screen; font size auto-scales to fit
+
+# Font
+font:
+  path: "fonts/CascadiaMono-VariableFont_wght.ttf"  # Path to .ttf/.otf file. null = system default
+  bold: true               # Use bold weight (700) for variable fonts
+  stroke_width: 2          # Text outline thickness in pixels
+  stroke_color: "#000000"  # Outline color. null = no outline
+
+# Colors (hex, supports alpha)
+colors:
+  text: "#FFFFFFB3"        # 70% opaque
+  highlight: "#FFFFFFE6"   # 90% opaque
+
+# Highlight animation
+highlight:
+  scale: 1.0  # Scale factor for highlighted word (1.0 = no scaling)
+
+# Position
+position:
+  vertical: "bottom"   # "top", "center", or "bottom"
+  margin_bottom: 0.06  # Fraction of height from bottom edge
+  margin_top: 0.13     # Fraction of height from top edge
+  margin_side: 0.05    # Fraction of width for horizontal padding
+
+# Background box behind subtitles
+background:
+  enabled: false
+  color: "#00000000"   # Box color (00 alpha = fully transparent)
+  padding_x: 20
+  padding_y: 12
+  border_radius: 10
+
+# Whisper settings (for transcribe.py)
+whisper:
+  model: "large-v3"    # tiny, base, small, medium, large-v3
+  language: "en"   # e.g. "en", "nl", "fr", or null for auto-detect
+  device: "auto"   # "auto", "cpu", "cuda", "mps"
+
+# Word replacements (fix common Whisper mistranscriptions)
+word_replacements:
+  "Casbah": "Kasbah"
+
+# Output encoding
+output:
+  codec: "libx264"
+  audio_codec: "aac"
+  preset: "slow"  # ultrafast, fast, medium, slow
+  crf: 18           # Quality (lower = better, 18-23 typical)
