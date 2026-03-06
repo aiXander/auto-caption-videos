@@ -14,8 +14,8 @@ font:
 
 # Colors (hex, supports alpha)
 colors:
-  text: "#FFFFFFB3"        # 70% opaque
-  highlight: "#FFFFFFE6"   # 90% opaque
+  text: "#FFFFFF80"        # 50% opaque 
+  highlight: "#FFFFFFCC"   # 80% opaque
 
 # Highlight animation
 highlight:
@@ -24,8 +24,8 @@ highlight:
 # Position
 position:
   vertical: "bottom"   # "top", "center", or "bottom"
-  margin_bottom: 0.06  # Fraction of height from bottom edge
-  margin_top: 0.13     # Fraction of height from top edge
+  margin_bottom: 0.09  # Fraction of height from bottom edge
+  margin_top: 0.09     # Fraction of height from top edge
   margin_side: 0.05    # Fraction of width for horizontal padding
 
 # Background box behind subtitles
