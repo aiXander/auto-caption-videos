@@ -38,7 +38,7 @@ background:
 
 # Whisper settings (for transcribe.py)
 whisper:
-  model: "large-v3"    # tiny, base, small, medium, large-v3
+  model: "base"    # tiny, base, small, medium, large-v3
   language: "en"   # e.g. "en", "nl", "fr", or null for auto-detect
   device: "auto"   # "auto", "cpu", "cuda", "mps"
 
