@@ -50,5 +50,5 @@ word_replacements:
 output:
   codec: "libx264"
   audio_codec: "aac"
-  preset: "slow"  # ultrafast, fast, medium, slow
-  crf: 18           # Quality (lower = better, 18-23 typical)
+  preset: "medium"  # ultrafast, fast, medium, slow
+  crf: 23           # Quality (lower = better, 18-23 typical)
