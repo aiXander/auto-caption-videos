@@ -10,7 +10,9 @@ The timestamps.json file is produced by transcribe.py and can be manually edited
 
 import argparse
 import json
+import os
 import subprocess
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -465,6 +467,12 @@ def main():
     parser.add_argument("--cutoff", type=float, default=None,
                         help="Only render the first N seconds (e.g. --cutoff 15)")
     args = parser.parse_args()
+
+    # Validate input files exist on disk
+    for label, path in [("Video file", args.video), ("Timestamps file", args.timestamps)]:
+        if not os.path.isfile(path):
+            print(f"Error: {label} not found: {path}")
+            sys.exit(1)
 
     cfg = load_config(args.config)
 
