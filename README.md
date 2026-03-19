@@ -4,7 +4,7 @@ Add word-level highlighted subtitles to any video using Whisper transcription.
 
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
 
-<video src="subtitle_example_web.webm" autoplay loop muted playsinline width="100%"></video>
+<video src="https://github.com/aiXander/auto-caption-videos/raw/main/subtitle_example_web.webm" autoplay loop muted playsinline width="100%"></video>
 
 ## How it works
 
