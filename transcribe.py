@@ -137,6 +137,15 @@ def align_words_to_segments(segments, words):
                 seg["words"].append({"text": w, "start": round(ws, 3), "end": round(we, 3)})
 
 
+def _seconds_to_srt_time(seconds):
+    """Convert seconds (float) to SRT timestamp format: HH:MM:SS,mmm"""
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = int(seconds % 60)
+    ms = int(round((seconds - int(seconds)) * 1000))
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+
 def main():
     parser = argparse.ArgumentParser(description="Step 1: Transcribe video and output editable timestamps")
     parser.add_argument("video", help="Input video file (e.g. video.mp4)")
@@ -262,7 +271,16 @@ def main():
     with open(output_path, "w") as f:
         json.dump(segments, f, indent=2, ensure_ascii=False)
 
+    # 5. Write SRT file
+    srt_output_path = str(Path(output_path).with_suffix(".srt"))
+    with open(srt_output_path, "w") as f:
+        for i, seg in enumerate(segments, 1):
+            start_srt = _seconds_to_srt_time(seg["start"])
+            end_srt = _seconds_to_srt_time(seg["end"])
+            f.write(f"{i}\n{start_srt} --> {end_srt}\n{seg['text']}\n\n")
+
     print(f"\nWrote {len(segments)} segments to: {output_path}")
+    print(f"Wrote SRT subtitle file to: {srt_output_path}")
     print("You can now edit this file, then run:")
     print(f"  python render.py {args.video} {output_path}")
 
